@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Bidfish Nelayan</string>
+    <string name="label_next">Lanjut</string>
+    <string name="label_skip">Lewati</string>
+    <string name="label_your_email">Email Anda</string>
+    <string name="label_your_password">Kata Sandi Anda</string>
+    <string name="label_login">Masuk</string>
+    <string name="label_register">Daftar</string>
+    <string name="label_doesnt_have_account">Belum Punya Akun?</string>
+    <string name="label_fullname">Nama Lengkap</string>
+    <string name="label_sample_fullname">Sample Fullname</string>
+    <string name="label_sample_email">Sample Email</string>
+    <string name="label_sample_name_fish">Sample Name Fish</string>
+    <string name="sample_location">Banten</string>
+</resources>
