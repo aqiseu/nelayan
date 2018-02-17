@@ -1,4 +1,4 @@
-package com.com.android.bidfishnelayan;
+package com.learn.dimdimasdim.bidfishnelayan;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

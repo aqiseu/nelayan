@@ -1,4 +1,4 @@
-package com.com.android.bidfishnelayan.data.preference;
+package com.learn.dimdimasdim.bidfishnelayan.data.preference;
 
 import android.content.Context;
 import android.content.SharedPreferences;

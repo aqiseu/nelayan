@@ -1,6 +1,6 @@
-package com.com.android.bidfishnelayan.view;
+package com.learn.dimdimasdim.bidfishnelayan.view;
 
-import com.com.android.bidfishnelayan.R;
+import com.learn.dimdimasdim.bidfishnelayan.R;
 
 import android.content.Context;
 import android.content.Intent;

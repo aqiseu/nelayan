@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.com.android.bidfishnelayan.view.SplashActivity">
+    tools:context="com.learn.dimdimasdim.bidfishnelayan.view.SplashActivity">
 
     <ImageView
         android:layout_width="256dp"

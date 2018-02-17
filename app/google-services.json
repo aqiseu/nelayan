@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "150482028727",
+    "firebase_url": "https://bidfish-21536.firebaseio.com",
+    "project_id": "bidfish-21536",
+    "storage_bucket": "bidfish-21536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150482028727:android:7163f9d97dd1809b",
+        "android_client_info": {
+          "package_name": "com.semarmesem.bidfish.bidfishcustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150482028727-uq1cjijucd48mvpphacu9g7gaq0s69qv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.semarmesem.bidfish.bidfishcustomer",
+            "certificate_hash": "e82682a77133003828426b0bb097ca7671090234"
+          }
+        },
+        {
+          "client_id": "150482028727-k38nnbhqjn9v5f036nhf9j81sl9v8bh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrcL3PVl_75ng2i0GYum5wSgYXsNOZ9OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150482028727-k38nnbhqjn9v5f036nhf9j81sl9v8bh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150482028727:android:1e52c0e7c153d231",
+        "android_client_info": {
+          "package_name": "com.learn.dimdimasdim.bidfishnelayan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150482028727-5d4uksgkn8c07adkt3vhps0fddbnjt4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learn.dimdimasdim.bidfishnelayan",
+            "certificate_hash": "47cbea63fa40bfa57f1d1d64cd8e155eef9a6122"
+          }
+        },
+        {
+          "client_id": "150482028727-k38nnbhqjn9v5f036nhf9j81sl9v8bh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrcL3PVl_75ng2i0GYum5wSgYXsNOZ9OI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150482028727-k38nnbhqjn9v5f036nhf9j81sl9v8bh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

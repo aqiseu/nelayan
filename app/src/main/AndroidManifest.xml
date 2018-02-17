@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.com.android.bidfishnelayan">
+    package="com.learn.dimdimasdim.bidfishnelayan">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.SplashActivity">
+        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -17,24 +17,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LoginActivity"
+            android:name="com.learn.dimdimasdim.bidfishnelayan.view.LoginActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".view.RegisterActivity"
+            android:name="com.learn.dimdimasdim.bidfishnelayan.view.RegisterActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".view.MainActivity"
+            android:name="com.learn.dimdimasdim.bidfishnelayan.view.MainActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".view.IntroActivity"
+            android:name="com.learn.dimdimasdim.bidfishnelayan.view.IntroActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.AddBidActivity">
+        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.AddBidActivity">
         </activity>
-        <activity android:name=".view.DetailAuctionActivity">
+        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.DetailAuctionActivity">
         </activity>
     </application>
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.com.android.bidfishnelayan.view.AddBidActivity">
+    tools:context="com.learn.dimdimasdim.bidfishnelayan.view.AddBidActivity">
 
     <include layout="@layout/toolbar"/>
 

@@ -1,7 +1,7 @@
-package com.com.android.bidfishnelayan.view;
+package com.learn.dimdimasdim.bidfishnelayan.view;
 
-import com.com.android.bidfishnelayan.R;
-import com.com.android.bidfishnelayan.data.preference.PreferenceManager;
+import com.learn.dimdimasdim.bidfishnelayan.R;
+import com.learn.dimdimasdim.bidfishnelayan.data.preference.PreferenceManager;
 import com.github.paolorotolo.appintro.AppIntro;
 import com.github.paolorotolo.appintro.AppIntroFragment;
 import com.github.paolorotolo.appintro.model.SliderPage;

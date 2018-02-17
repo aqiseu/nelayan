@@ -1,4 +1,4 @@
-package com.com.android.bidfishnelayan;
+package com.learn.dimdimasdim.bidfishnelayan;
 
 import org.junit.Test;
 

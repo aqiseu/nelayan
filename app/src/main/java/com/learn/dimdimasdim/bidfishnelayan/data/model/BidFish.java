@@ -1,4 +1,4 @@
-package com.com.android.bidfishnelayan.data.model;
+package com.learn.dimdimasdim.bidfishnelayan.data.model;
 
 /**
  * Created by dimdimasdim on 16/02/2018.
