@@ -32,7 +32,7 @@
             android:name=".view.IntroActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.DetailBidActivity">
+        <activity android:name=".view.AddBidActivity">
         </activity>
     </application>
 

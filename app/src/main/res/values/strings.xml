@@ -13,4 +13,5 @@
     <string name="label_sample_name_fish">Sample Name Fish</string>
     <string name="sample_location">Banten</string>
     <string name="label_add_bid">Tambah Lelang</string>
+    <string name="label_kirim">Kirim Data</string>
 </resources>

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements BidFishAdapter.On
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_add_bid_fish:
-                DetailBidActivity.start(this);
+                AddBidActivity.start(this);
                 break;
         }
     }
