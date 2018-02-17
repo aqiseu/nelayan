@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -35,7 +34,7 @@ public class BidFishAdapter extends RecyclerView.Adapter<BidFishAdapter.BidFishV
     }
 
     public interface OnItemBidClickListener{
-        void onContainerClick(BidFish bidFish);
+        void onContainerClick(int position);
     }
     
     public OnItemBidClickListener getOnItemBidClickListener(){
@@ -90,7 +89,7 @@ public class BidFishAdapter extends RecyclerView.Adapter<BidFishAdapter.BidFishV
         public void onClick(View view) {
 
             if (listener != null && view.getId() == R.id.rl_container_item_bid){
-                Toast.makeText(context, "ke klik aku", Toast.LENGTH_SHORT).show();
+                onItemClickListener.onContainerClick(getAdapterPosition());
             }
 
         }

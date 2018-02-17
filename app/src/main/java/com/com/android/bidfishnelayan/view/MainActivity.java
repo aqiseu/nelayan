@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,8 +55,9 @@ public class MainActivity extends AppCompatActivity implements BidFishAdapter.On
     }
 
     @Override
-    public void onContainerClick(BidFish bidFish) {
-
+    public void onContainerClick(int position) {
+        Log.i(MainActivity.class.getSimpleName(), "Posisi Gua " + position);
+        DetailAuctionActivity.start(this);
     }
 
     @Override

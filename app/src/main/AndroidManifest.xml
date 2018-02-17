@@ -34,6 +34,8 @@
         </activity>
         <activity android:name=".view.AddBidActivity">
         </activity>
+        <activity android:name=".view.DetailAuctionActivity">
+        </activity>
     </application>
 
 </manifest>
