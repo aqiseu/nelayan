@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_header"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/colorPrimary">
 
@@ -44,9 +44,24 @@
             android:fontFamily="@font/nunitosans_regular"
             android:textColor="@color/colorWhite"/>
 
+        <Button
+            android:id="@+id/btn_add_bid_fish"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="@string/label_add_bid"
+            android:layout_gravity="right"
+            android:layout_margin="@dimen/item_margin_8"
+            android:paddingLeft="@dimen/item_margin_8"
+            android:paddingRight="@dimen/item_margin_8"
+            android:textSize="10sp"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/nunitoaans_bold"
+            android:background="@drawable/bg_button_accent"/>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:padding="@dimen/activity_vertical_padding"
         android:id="@+id/rv_lelang_ikan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
