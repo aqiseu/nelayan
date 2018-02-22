@@ -25,7 +25,7 @@
                 android:background="@drawable/bg_upload_photo">
 
                 <ImageView
-                    android:id="@+id/img_upload_photo"
+                    android:id="@+id/img_upload_photo_bid"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_header"
                     android:scaleType="fitXY"/>
@@ -48,10 +48,10 @@
                 android:layout_marginBottom="@dimen/item_margin_8">
 
                 <EditText
-                    android:id="@+id/edt_type_fifh"
+                    android:id="@+id/edt_type_fish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_your_email"
+                    android:hint="@string/label_type_fish"
                     android:fontFamily="@font/nunitosans_regular"
                     android:inputType="textEmailAddress"/>
 
@@ -69,7 +69,7 @@
                     android:id="@+id/edt_time_catching"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_your_email"
+                    android:hint="@string/label_time_catching"
                     android:fontFamily="@font/nunitosans_regular"
                     android:inputType="textEmailAddress"/>
 
@@ -86,7 +86,7 @@
                     android:id="@+id/edt_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_your_email"
+                    android:hint="@string/label_location"
                     android:fontFamily="@font/nunitosans_regular"
                     android:inputType="textEmailAddress"/>
 
@@ -103,7 +103,7 @@
                     android:id="@+id/edt_price_bid_fish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_your_email"
+                    android:hint="@string/label_price_bid"
                     android:fontFamily="@font/nunitosans_regular"
                     android:inputType="textEmailAddress"/>
 
@@ -120,14 +120,14 @@
                     android:id="@+id/edt_time_for_bid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_your_email"
+                    android:hint="@string/label_time_to_bid"
                     android:fontFamily="@font/nunitosans_regular"
                     android:inputType="textEmailAddress"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_send"
+                android:id="@+id/btn_send_bid"
                 android:layout_width="@dimen/width_button_general"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

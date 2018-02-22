@@ -15,4 +15,14 @@
     <string name="label_add_bid">Tambah Lelang</string>
     <string name="label_kirim">Kirim Data</string>
     <string name="label_finish_bid">Selesaikan Lelang</string>
+    <string name="label_phone_number">Nomor Telepon</string>
+    <string name="label_address">Alamat</string>
+    <string name="label_gender">Jenis Kelamin</string>
+    <string name="label_from_camera">From Camera</string>
+    <string name="label_from_gallery">From Gallery</string>
+    <string name="label_type_fish">Jenis Ikan</string>
+    <string name="label_time_catching">Waktu penangkapan</string>
+    <string name="label_location">Lokasi</string>
+    <string name="label_price_bid">Harga awal</string>
+    <string name="label_time_to_bid">Waktu pelelangan</string>
 </resources>

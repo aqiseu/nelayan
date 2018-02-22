@@ -1,17 +1,23 @@
 package com.learn.dimdimasdim.bidfishnelayan.adapter;
 
+import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.learn.dimdimasdim.bidfishnelayan.R;
 import com.learn.dimdimasdim.bidfishnelayan.data.model.BidFish;
+import com.learn.dimdimasdim.bidfishnelayan.view.DetailAuctionActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dimdimasdim on 16/02/2018.
@@ -19,79 +25,72 @@ import java.util.ArrayList;
 
 public class BidFishAdapter extends RecyclerView.Adapter<BidFishAdapter.BidFishViewHolder> {
 
-    private ArrayList<BidFish> bidFishes;
-
+    private List<BidFish> bidFishList;
     private Context context;
+    private FirebaseFirestore firebaseFirestore;
 
-    private OnItemBidClickListener onItemClickListener;
-
-    public BidFishAdapter(
-        ArrayList<BidFish> bidFishes, Context context,
-        OnItemBidClickListener onItemClickListener) {
-        this.bidFishes = bidFishes;
+    public BidFishAdapter (List<BidFish> bidFishList, Context context, FirebaseFirestore firebaseFirestore){
+        this.bidFishList = bidFishList;
         this.context = context;
-        this.onItemClickListener = onItemClickListener;
-    }
-
-    public interface OnItemBidClickListener{
-        void onContainerClick(int position);
-    }
-    
-    public OnItemBidClickListener getOnItemBidClickListener(){
-        return onItemClickListener;
+        this.firebaseFirestore = firebaseFirestore;
     }
 
     @Override
-    public BidFishViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.item_bid, parent, false);
-        return new BidFishViewHolder(itemView, getOnItemBidClickListener());
+    public BidFishAdapter.BidFishViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_bid, parent, false);
+        return new BidFishAdapter.BidFishViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(BidFishViewHolder holder, int position) {
-        BidFish bidFish = bidFishes.get(position);
-        holder.nameBid.setText(bidFish.getBidFishName());
-        holder.locationBid.setText(bidFish.getLocation());
-        holder.priceBid.setText(bidFish.getPriceBid());
+    public void onBindViewHolder(BidFishAdapter.BidFishViewHolder holder, int position) {
+        final int itemPosition = position;
+        final BidFish bidFish = bidFishList.get(itemPosition);
+
+        holder.tvName.setText(bidFish.getBidFishName());
+        holder.tvPrice.setText(bidFish.getPriceBid());
+        holder.tvLocation.setText(bidFish.getLocation());
+        Glide.with(context).load(bidFish.getUrlImgBid()).into(holder.ivPhoto);
+
+        holder.cvContainerBid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewDetailAuction(bidFish);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return bidFishes.size();
+        return bidFishList.size();
     }
 
-    public class BidFishViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class BidFishViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView nameBid, priceBid, locationBid;
+        ImageView ivPhoto;
+        TextView tvName, tvPrice, tvLocation;
+        CardView cvContainerBid;
 
-        private RelativeLayout containerItemBid;
-
-        private OnItemBidClickListener listener;
-
-        public BidFishViewHolder(View itemView, OnItemBidClickListener listener) {
+        public BidFishViewHolder(View itemView){
             super(itemView);
 
-            this.listener = listener;
-
-            nameBid = itemView.findViewById(R.id.tv_name_bid);
-
-            priceBid = itemView.findViewById(R.id.tv_price);
-
-            locationBid = itemView.findViewById(R.id.tv_location_bid);
-
-            containerItemBid = itemView.findViewById(R.id.rl_container_item_bid);
-
-            containerItemBid.setOnClickListener(this);
+            ivPhoto = itemView.findViewById(R.id.img_bid_fish);
+            tvName = itemView.findViewById(R.id.tv_name_bid);
+            tvPrice = itemView.findViewById(R.id.tv_price);
+            tvLocation = itemView.findViewById(R.id.tv_location_bid);
+            cvContainerBid = itemView.findViewById(R.id.cv_container_item_bid);
         }
+    }
 
-        @Override
-        public void onClick(View view) {
-
-            if (listener != null && view.getId() == R.id.rl_container_item_bid){
-                onItemClickListener.onContainerClick(getAdapterPosition());
-            }
-
-        }
+    private void viewDetailAuction (BidFish bidFish){
+        Intent intent = new Intent(context, DetailAuctionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("photo", bidFish.getUrlImgBid());
+        intent.putExtra("type", bidFish.getBidFishName());
+        intent.putExtra("timeCatch", bidFish.getTimeCatchingFish());
+        intent.putExtra("location", bidFish.getLocation());
+        intent.putExtra("price", bidFish.getPriceBid());
+        intent.putExtra("timeBid", bidFish.getTimeBid());
+        context.startActivity(intent);
     }
 }

@@ -5,6 +5,7 @@ package com.learn.dimdimasdim.bidfishnelayan.data.model;
  */
 
 public class BidFish {
+    private String id;
 
     private String bidFishName;
 
@@ -16,10 +17,55 @@ public class BidFish {
 
     private String priceBid;
 
+    private String timeBid;
+
+    private String createdBid;
+
+    public BidFish (){
+
+    }
+
+    public BidFish(String bidFishName, String timeCatchingFish, String location, String priceBid, String timeBid, String urlImgBid){
+        this.bidFishName = bidFishName;
+        this.timeCatchingFish = timeCatchingFish;
+        this.location = location;
+        this.priceBid = priceBid;
+        this.timeBid = timeBid;
+        this.urlImgBid = urlImgBid;
+    }
+
     public BidFish(String bidFishName, String location, String priceBid) {
         this.bidFishName = bidFishName;
         this.location = location;
         this.priceBid = priceBid;
+    }
+
+    public BidFish(String id, String createdBid, String bidFishName, String timeCatchingFish, String location, String priceBid, String timeBid, String urlImgBid){
+        this.id = id;
+        this.createdBid = createdBid;
+        this.bidFishName = bidFishName;
+        this.timeCatchingFish = timeCatchingFish;
+        this.location = location;
+        this.priceBid = priceBid;
+        this.timeBid = timeBid;
+        this.urlImgBid = urlImgBid;
+    }
+
+    public String getCreatedBid() {
+        return createdBid;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+    public String getTimeBid() {
+        return timeBid;
     }
 
     public String getBidFishName() {

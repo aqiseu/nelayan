@@ -10,11 +10,36 @@
 
     <include layout="@layout/view_header_logo"/>
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/activity_vertical_padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_header"
+            android:background="@drawable/bg_upload_photo">
+
+            <ImageView
+                android:id="@+id/img_register_upload_photo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_header"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:id="@+id/ic_register_add_photo_bid"
+                android:src="@drawable/ic_add"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -53,6 +78,57 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/til_gender"
+            android:textColorHint="@color/colorPrimaryLight"
+            android:layout_marginBottom="@dimen/item_margin_8">
+
+            <EditText
+                android:id="@+id/edt_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_gender"
+                android:fontFamily="@font/nunitosans_regular"
+                android:inputType="text"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/til_address"
+            android:textColorHint="@color/colorPrimaryLight"
+            android:layout_marginBottom="@dimen/item_margin_8">
+
+            <EditText
+                android:id="@+id/edt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_address"
+                android:fontFamily="@font/nunitosans_regular"
+                android:inputType="text"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/til_Phone"
+            android:textColorHint="@color/colorPrimaryLight"
+            android:layout_marginBottom="@dimen/item_margin_8">
+
+            <EditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_phone_number"
+                android:fontFamily="@font/nunitosans_regular"
+                android:inputType="text"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/til_password"
             android:textColorHint="@color/colorPrimaryLight"
             app:passwordToggleEnabled="true"
@@ -69,7 +145,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="@dimen/width_button_general"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -79,5 +155,6 @@
             android:fontFamily="@font/nunitoaans_bold"
             android:textColor="@color/colorWhite"/>
     </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

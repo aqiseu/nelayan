@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/rl_container_item_bid"
+<android.support.v7.widget.CardView
+    android:id="@+id/cv_container_item_bid"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:padding="@dimen/activity_vertical_padding"
     android:background="@drawable/bg_item_bid"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/item_margin_8">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/img_bid_fish"
@@ -16,7 +20,7 @@
         android:src="@drawable/ic_launcher_background"/>
 
     <LinearLayout
-        android:layout_toRightOf="@+id/img_bid_fish"
+        android:layout_toRightOf="@id/img_bid_fish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_vertical_padding"
@@ -54,5 +58,6 @@
             android:fontFamily="@font/nunitosans_italic"/>
 
     </LinearLayout>
+    </RelativeLayout>
 
-</RelativeLayout>
+</android.support.v7.widget.CardView>
