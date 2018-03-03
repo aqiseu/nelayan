@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="@string/label_sample_fullname"
             android:layout_marginTop="@dimen/item_margin_8"
-            android:fontFamily="@font/nunitoaans_bold"
+            android:fontFamily="@font/nunitosans_bold"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:layout_gravity="center_horizontal"/>
@@ -59,7 +59,7 @@
             android:paddingRight="@dimen/item_margin_8"
             android:textSize="10sp"
             android:textColor="@color/colorWhite"
-            android:fontFamily="@font/nunitoaans_bold"
+            android:fontFamily="@font/nunitosans_bold"
             android:background="@drawable/bg_button_accent"/>
 
     </LinearLayout>

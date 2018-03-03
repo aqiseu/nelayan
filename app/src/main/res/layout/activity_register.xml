@@ -75,22 +75,17 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/til_gender"
-            android:textColorHint="@color/colorPrimaryLight"
-            android:layout_marginBottom="@dimen/item_margin_8">
 
-            <EditText
-                android:id="@+id/edt_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/label_gender"
-                android:fontFamily="@font/nunitosans_regular"
-                android:inputType="text"/>
-
-        </android.support.design.widget.TextInputLayout>
+        <Spinner
+            android:textSize="13sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/edt_gender"
+            android:gravity="center"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:drawSelectorOnTop="true"
+            android:dropDownVerticalOffset="-53dp"
+            android:spinnerMode="dropdown" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -152,7 +147,7 @@
             android:layout_marginTop="@dimen/item_margin_32"
             android:background="@drawable/bg_button_general"
             android:text="@string/label_register"
-            android:fontFamily="@font/nunitoaans_bold"
+            android:fontFamily="@font/nunitosans_bold"
             android:textColor="@color/colorWhite"/>
     </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

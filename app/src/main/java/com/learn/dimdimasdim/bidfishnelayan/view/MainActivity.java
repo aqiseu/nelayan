@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity{
     private Button btnAddBidFish;
     private Toolbar toolbar;
 
+    MenuItem prevMenuItem;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,21 +101,29 @@ public class MainActivity extends AppCompatActivity{
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_main_navigation, menu);
-        MenuItem menuItem = menu.findItem(R.id.menu_logout);
-
-        menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem prevMenuItem){
+        switch (prevMenuItem.getItemId()) {
+            case R.id.menu_cust:
+                goRequest();
+                return true;
+            case R.id.menu_logout:
                 signOut();
                 return true;
-            }
-        });
+            case R.id.menu_notif:
+                goNotif();
+                return true;
+            default:
+                return super.onOptionsItemSelected(prevMenuItem);
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main_navigation, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 
     private void setProfile(){
 
@@ -205,5 +215,15 @@ public class MainActivity extends AppCompatActivity{
 
         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
+    }
+
+    public void goNotif(){
+        Intent notif = new Intent(MainActivity.this, NotifActivity.class);
+        startActivity(notif);
+    }
+
+    public void goRequest(){
+        Intent req = new Intent(MainActivity.this, RequestActivity.class);
+        startActivity(req);
     }
 }

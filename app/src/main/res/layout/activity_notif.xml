@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.learn.dimdimasdim.bidfishnelayan.view.ProfileActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_margin_8"
+        android:text="Notification"
+        android:fontFamily="@font/nunitosans_bold"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+
+    <android.support.v7.widget.RecyclerView
+
+        android:padding="@dimen/activity_vertical_padding"
+        android:id="@+id/rv_notif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

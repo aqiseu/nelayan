@@ -5,4 +5,10 @@
     <dimen name="item_margin_8">8dp</dimen>
     <dimen name="item_margin_32">32dp</dimen>
     <dimen name="width_button_general">256dp</dimen>
+    <dimen name="dp_270">270dp</dimen>
+    <dimen name="dp_150">150dp</dimen>
+    <dimen name="dp_162">162dp</dimen>
+    <dimen name="default_title_slider">27sp</dimen>
+    <dimen name="dp_52">52dp</dimen>
+    <dimen name="item_margin_5">5dp</dimen>
 </resources>

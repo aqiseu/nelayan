@@ -35,43 +35,67 @@
                     android:src="@drawable/ic_add"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:layout_centerInParent="true"/>
+                    android:layout_marginTop="50dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ic_add_photo_bid"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:text="Upload fish photo"/>
+
+
 
 
             </RelativeLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Input Auction Description"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans_regular"/>
+
+           <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/til_type_fish"
+                android:id="@+id/til_auct_name"
                 android:textColorHint="@color/colorPrimaryLight"
-                android:layout_marginBottom="@dimen/item_margin_8">
+                android:layout_marginBottom="5dp">
 
                 <EditText
-                    android:id="@+id/edt_type_fish"
+                    android:id="@+id/edt_auct_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_type_fish"
+                    android:hint="Auction Name"
+                    android:gravity="center"
                     android:fontFamily="@font/nunitosans_regular"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="text"/>
 
             </android.support.design.widget.TextInputLayout>
 
-
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/til_time_catching"
+                android:id="@+id/til_fish_vessel"
                 android:textColorHint="@color/colorPrimaryLight"
-                android:layout_marginBottom="@dimen/item_margin_8">
+                android:layout_marginBottom="5dp">
 
                 <EditText
-                    android:id="@+id/edt_time_catching"
+                    android:id="@+id/edt_fish_vessel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/label_time_catching"
+                    android:hint="Fishing Vessels Name"
+                    android:gravity="center"
                     android:fontFamily="@font/nunitosans_regular"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="text"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -83,6 +107,7 @@
                 android:layout_marginBottom="@dimen/item_margin_8">
 
                 <EditText
+                    android:gravity="center"
                     android:id="@+id/edt_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -91,6 +116,83 @@
                     android:inputType="textEmailAddress"/>
 
             </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:padding="5dp"
+                android:id="@+id/edt_time_catching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_time_catching"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/nunitosans_regular" />
+
+            <View
+                android:layout_marginTop="20dp"
+                android:layout_width="250dp"
+                android:layout_gravity="center"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Input Item Description"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunitosans_regular"/>
+
+
+            <LinearLayout
+                android:gravity="left"
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/til_type_fish"
+                    android:textColorHint="@color/colorPrimaryLight"
+                    android:layout_marginBottom="@dimen/item_margin_8">
+
+                    <EditText
+                        android:gravity="left"
+                        android:id="@+id/edt_type_fish"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:lines="6"
+                        android:minLines="6"
+                        android:maxLines="20"
+                        android:scrollbars="vertical"
+                        android:hint="Input Item Description ex: Fishes, Traces, Kilograms, Great"
+                        android:fontFamily="@font/nunitosans_regular"
+                        android:inputType="textMultiLine"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <CheckBox
+                    android:layout_margin="@dimen/item_margin_8"
+                    android:id="@+id/rd_crt_fish_two"
+                    android:layout_marginLeft="@dimen/item_margin_8"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="@font/nunitosans_regular"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Certified"/>
+
+            </LinearLayout>
+
+
+
+
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -103,28 +205,39 @@
                     android:id="@+id/edt_price_bid_fish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:hint="@string/label_price_bid"
                     android:fontFamily="@font/nunitosans_regular"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="number"/>
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/til_time_for_bid"
-                android:textColorHint="@color/colorPrimaryLight"
-                android:layout_marginBottom="@dimen/item_margin_8">
+              <LinearLayout
+                  android:layout_gravity="center"
+                  android:layout_width="wrap_content"
+                  android:layout_height="50dp"
+                  android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/edt_time_for_bid"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/label_time_to_bid"
-                    android:fontFamily="@font/nunitosans_regular"
-                    android:inputType="textEmailAddress"/>
+                  <Spinner
+                      android:textSize="13sp"
+                      android:id="@+id/spn_time_picker"
+                      android:gravity="center"
+                      android:layout_width="100dp"
+                      android:layout_height="match_parent"
+                      android:layout_gravity="center"
+                      android:drawSelectorOnTop="true"
+                      android:dropDownVerticalOffset="-53dp"
+                      android:spinnerMode="dropdown" />
 
-            </android.support.design.widget.TextInputLayout>
+                  <TextView
+                      android:fontFamily="@font/nunitosans_regular"
+                      android:layout_width="wrap_content"
+                      android:gravity="center"
+                      android:layout_height="match_parent"
+                      android:textSize="20sp"
+                      android:text="minutes"/>
+
+              </LinearLayout>
 
             <Button
                 android:id="@+id/btn_send_bid"
@@ -134,7 +247,7 @@
                 android:layout_marginTop="@dimen/item_margin_32"
                 android:background="@drawable/bg_button_general"
                 android:text="@string/label_kirim"
-                android:fontFamily="@font/nunitoaans_bold"
+                android:fontFamily="@font/nunitosans_bold"
                 android:textColor="@color/colorWhite"/>
 
         </LinearLayout>

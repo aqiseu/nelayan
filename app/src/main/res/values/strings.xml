@@ -1,28 +1,36 @@
 <resources>
-    <string name="app_name">Bidfish Nelayan</string>
-    <string name="label_next">Lanjut</string>
-    <string name="label_skip">Lewati</string>
-    <string name="label_your_email">Email Anda</string>
-    <string name="label_your_password">Kata Sandi Anda</string>
-    <string name="label_login">Masuk</string>
-    <string name="label_register">Daftar</string>
-    <string name="label_doesnt_have_account">Belum Punya Akun?</string>
-    <string name="label_fullname">Nama Lengkap</string>
+    <string name="app_name">Bidfish Auctioneer</string>
+    <string name="label_next">Next</string>
+    <string name="label_skip">Skip</string>
+    <string name="label_your_email">Your Email</string>
+    <string name="label_your_password">Your Password</string>
+    <string name="label_login">Sign in</string>
+    <string name="label_register">Register</string>
+    <string name="label_doesnt_have_account">New on BidFish?</string>
+    <string name="label_fullname">Full Name</string>
     <string name="label_sample_fullname">Sample Fullname</string>
     <string name="label_sample_email">Sample Email</string>
     <string name="label_sample_name_fish">Sample Name Fish</string>
     <string name="sample_location">Banten</string>
-    <string name="label_add_bid">Tambah Lelang</string>
+    <string name="label_add_bid">Start Auction</string>
     <string name="label_kirim">Kirim Data</string>
-    <string name="label_finish_bid">Selesaikan Lelang</string>
-    <string name="label_phone_number">Nomor Telepon</string>
-    <string name="label_address">Alamat</string>
-    <string name="label_gender">Jenis Kelamin</string>
+    <string name="label_finish_bid">Finish Auction</string>
+    <string name="label_phone_number">Phone Number</string>
+    <string name="label_address">Address</string>
+    <string name="label_gender">Gender</string>
     <string name="label_from_camera">From Camera</string>
     <string name="label_from_gallery">From Gallery</string>
-    <string name="label_type_fish">Jenis Ikan</string>
-    <string name="label_time_catching">Waktu penangkapan</string>
-    <string name="label_location">Lokasi</string>
-    <string name="label_price_bid">Harga awal</string>
-    <string name="label_time_to_bid">Waktu pelelangan</string>
+    <string name="label_type_fish">Fish</string>
+    <string name="label_time_catching">Catching time</string>
+    <string name="label_location">Location</string>
+    <string name="label_price_bid">Price set</string>
+    <string name="label_time_to_bid">Auction time</string>
+    <string name="desc_slider_three">Make an auction easily, get real-time bid from your customer, whenever, wherever.</string>
+    <string name="welcome_screen">Welcome to BidFish!</string>
+    <string name="desc_slider_two">Know your customer and make a deal easily and done your auction as fair as it needs.</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="large_text_example">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
 </resources>

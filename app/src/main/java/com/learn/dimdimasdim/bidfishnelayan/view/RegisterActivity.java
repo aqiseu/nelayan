@@ -1,18 +1,5 @@
 package com.learn.dimdimasdim.bidfishnelayan.view;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.learn.dimdimasdim.bidfishnelayan.R;
-import com.learn.dimdimasdim.bidfishnelayan.data.model.Auctioneer;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -25,40 +12,60 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.learn.dimdimasdim.bidfishnelayan.R;
+import com.learn.dimdimasdim.bidfishnelayan.data.model.Auctioneer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    @BindView(R.id.edt_gender)
+    Spinner inputGender;
     private EditText inputEmail;
     private EditText inputName;
-    private EditText inputGender;
     private EditText inputAddress;
     private EditText inputPhone;
     private EditText inputPassword;
     private ImageView inputPhoto;
 
     private String id, email, password, name, gender, address, phone, photo;
-    private int REQUEST_CAMERA = 0, SELECT_FILE =1;
+    private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private Uri selectedImage;
     private Button btnRegister;
 
     private AlertDialog.Builder builder;
     private AlertDialog alertDialog;
     private LayoutInflater inflater;
-    private Button inputPhotoFromCamera, inputPhotoFromGallery;
+    private ImageView inputPhotoFromCamera, inputPhotoFromGallery;
     private ImageView addPhoto;
 
 
@@ -78,21 +85,32 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        ButterKnife.bind(this);
 
         auth = FirebaseAuth.getInstance();
         dbAuctioneer = FirebaseFirestore.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
         reference = firebaseStorage.getReference().child("auctioneers");
 
-        inputEmail = (EditText)findViewById(R.id.edt_email);
-        inputName = (EditText)findViewById(R.id.edt_full_name);
-        inputGender = (EditText)findViewById(R.id.edt_gender);
-        inputAddress = (EditText)findViewById(R.id.edt_address);
-        inputPhone = (EditText)findViewById(R.id.edt_phone);
-        inputPassword = (EditText)findViewById(R.id.edt_password);
-        btnRegister = (Button)findViewById(R.id.btn_register);
-        inputPhoto = (ImageView)findViewById(R.id.img_register_upload_photo);
-        addPhoto = (ImageView)findViewById(R.id.ic_register_add_photo_bid);
+        List<String> list = new ArrayList<String>();
+        list.add("Choose a gender");
+        list.add("Female");
+        list.add("Male");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        inputGender.setAdapter(adapter);
+
+
+        inputEmail = (EditText) findViewById(R.id.edt_email);
+        inputName = (EditText) findViewById(R.id.edt_full_name);
+        inputAddress = (EditText) findViewById(R.id.edt_address);
+        inputPhone = (EditText) findViewById(R.id.edt_phone);
+        inputPassword = (EditText) findViewById(R.id.edt_password);
+        btnRegister = (Button) findViewById(R.id.btn_register);
+        inputPhoto = (ImageView) findViewById(R.id.img_register_upload_photo);
+        addPhoto = (ImageView) findViewById(R.id.ic_register_add_photo_bid);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void setAlertDialogUploadPhoto (){
+    private void setAlertDialogUploadPhoto() {
         builder = new AlertDialog.Builder(RegisterActivity.this);
         inflater = getLayoutInflater();
 
@@ -118,8 +136,8 @@ public class RegisterActivity extends AppCompatActivity {
         builder.setCancelable(true);
         builder.setView(view);
 
-        inputPhotoFromCamera = (Button)view.findViewById(R.id.btn_upload_from_camera);
-        inputPhotoFromGallery = (Button)view.findViewById(R.id.btn_upload_from_gallery);
+        inputPhotoFromCamera = (ImageView) view.findViewById(R.id.btn_upload_from_camera);
+        inputPhotoFromGallery = (ImageView) view.findViewById(R.id.btn_upload_from_gallery);
 
         alertDialog = builder.create();
         alertDialog.show();
@@ -150,7 +168,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             if (requestCode == SELECT_FILE)
                 onSelectedFromGalleryResult(data);
             else if (requestCode == REQUEST_CAMERA)
@@ -158,27 +176,27 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private void onSelectedFromGalleryResult (Intent data){
+    private void onSelectedFromGalleryResult(Intent data) {
         Bitmap bm = null;
-        if (data != null){
+        if (data != null) {
             try {
                 bm = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
                 selectedImage = data.getData();
                 inputPhoto.setImageBitmap(bm);
-            } catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
 
-    private void onCaptureImageResult(Intent data){
-        Bitmap thumbnail = (Bitmap)data.getExtras().get("data");
+    private void onCaptureImageResult(Intent data) {
+        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         thumbnail.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
 
         File destination = new File(Environment.getExternalStorageDirectory(),
-                System.currentTimeMillis()+ ".jpg");
+                System.currentTimeMillis() + ".jpg");
         selectedImage = Uri.fromFile(destination);
         FileOutputStream fo;
         try {
@@ -194,12 +212,12 @@ public class RegisterActivity extends AppCompatActivity {
         inputPhoto.setImageBitmap(thumbnail);
     }
 
-    public void registerAuthentication(){
+    public void registerAuthentication() {
 
         email = inputEmail.getText().toString();
         password = inputPassword.getText().toString();
         name = inputName.getText().toString();
-        gender = inputGender.getText().toString();
+        gender = inputGender.getSelectedItem().toString();
         address = inputAddress.getText().toString();
         phone = inputPhone.getText().toString();
 
@@ -215,13 +233,11 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        if (!task.isSuccessful()){
+                        if (!task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "Gagal untuk mendaftar" + task.getException(),
                                     Toast.LENGTH_SHORT).show();
                         } else {
 
-                            Toast.makeText(RegisterActivity.this, "Pendaftaran berhasil",
-                                    Toast.LENGTH_SHORT).show();
 
                             //menyimpan foto user
                             StorageReference profileImage = reference.child(selectedImage.getLastPathSegment());
@@ -251,6 +267,14 @@ public class RegisterActivity extends AppCompatActivity {
                                                     });
 
                                         }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+
+                                            Toast.makeText(RegisterActivity.this, "Pendaftaran berhasil",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
                                     });
 
                         }
@@ -259,7 +283,7 @@ public class RegisterActivity extends AppCompatActivity {
                 });
     }
 
-    private void viewHomeAuctioneer(Auctioneer auctioneer){
+    private void viewHomeAuctioneer(Auctioneer auctioneer) {
         Intent home = new Intent(getApplicationContext(), MainActivity.class);
         home.putExtra("photo", auctioneer.getPhotoUrl());
         home.putExtra("name", auctioneer.getName());

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Nelayan.iml" filepath="$PROJECT_DIR$/Nelayan.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\lenovo\Documents\UPNVJ\Android\Techomfest\Nelayan\bidfish nelayan.iml" filepath="C:\Users\lenovo\Documents\UPNVJ\Android\Techomfest\Nelayan\bidfish nelayan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nelayan.iml" filepath="$PROJECT_DIR$/nelayan.iml" />
     </modules>
   </component>
 </project>

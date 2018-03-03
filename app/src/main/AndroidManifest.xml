@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.learn.dimdimasdim.bidfishnelayan">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,33 +13,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.SplashActivity">
+        <activity android:name=".view.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.learn.dimdimasdim.bidfishnelayan.view.LoginActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".view.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.learn.dimdimasdim.bidfishnelayan.view.RegisterActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".view.RegisterActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.learn.dimdimasdim.bidfishnelayan.view.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:name=".view.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.learn.dimdimasdim.bidfishnelayan.view.IntroActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.AddBidActivity">
-        </activity>
-        <activity android:name="com.learn.dimdimasdim.bidfishnelayan.view.DetailAuctionActivity">
-        </activity>
+            android:name=".view.IntroActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".view.AddBidActivity" />
+        <activity android:name=".view.DetailAuctionActivity" />
+        <activity android:name=".view.NotifActivity" />
+        <activity android:name=".view.RequestActivity" />
+        <activity android:name=".view.ProfileActivity"></activity>
     </application>
 
 </manifest>
